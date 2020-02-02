@@ -2,19 +2,17 @@ package com.zuniorteam.racingcar.view.console;
 
 import com.zuniorteam.racingcar.dto.GameInput;
 import com.zuniorteam.racingcar.util.StringUtils;
-import com.zuniorteam.racingcar.view.GameInputView;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class ConsoleGameInputView implements GameInputView {
+public class GameInputView {
 
     private static final String CAR_NAMES_SPLIT_TOKEN = ",";
     private static final Scanner SCANNER = new Scanner(System.in);
 
-    @Override
     public GameInput listen() {
 
         final List<String> carNames = Arrays.stream(scanCarNames().split(CAR_NAMES_SPLIT_TOKEN))

@@ -2,12 +2,11 @@ package com.zuniorteam.racingcar.view.console;
 
 import com.zuniorteam.racingcar.dto.GameResult;
 import com.zuniorteam.racingcar.dto.StepResult;
-import com.zuniorteam.racingcar.view.GameResultView;
 import com.zuniorteam.racingcar.vo.MoveHistory;
 
 import java.util.List;
 
-public class ConsoleGameResultView implements GameResultView {
+public class GameResultView {
 
     private static final String NEW_LINE = "\n";
     private static final String DASH = "-";
