@@ -17,16 +17,17 @@ import static java.util.stream.Collectors.toList;
 
 public final class ResultRoute {
 
-    private ResultRoute() {}
+    private ResultRoute() {
+    }
 
     public static class post implements Route {
 
         private static final String PARAMETER_TURN = "turn";
-        private static final String PARAMETER_NAMES ="names" ;
-        private static final String VIEW_FILENAME = "result";
+        private static final String PARAMETER_NAMES = "names";
+        private static final String RESULT_VIEW_NAME = "result";
 
         @Override
-        public Object handle(Request request, Response response) throws Exception{
+        public Object handle(Request request, Response response) throws Exception {
 
             final List<String> names = getNames(request);
             final int turn = getTurn(request);
@@ -37,7 +38,7 @@ public final class ResultRoute {
             final Map<String, Object> model = new HashMap<>();
             model.put("gameResult", gameResult);
 
-            return ThymeleafCompiler.render(model, VIEW_FILENAME);
+            return ThymeleafCompiler.render(model, RESULT_VIEW_NAME);
         }
 
         private List<String> getNames(Request request) {
@@ -66,7 +67,7 @@ public final class ResultRoute {
         }
 
         private void validateTurn(String turnString) {
-            if(StringUtils.isEmpty(turnString)){
+            if (StringUtils.isEmpty(turnString)) {
                 throw new IllegalArgumentException("시도 횟수를 입력해주세요");
             }
         }

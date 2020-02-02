@@ -9,7 +9,7 @@ public final class ThymeleafCompiler {
 
     private static final ThymeleafTemplateEngine THYMELEAF_TEMPLATE_ENGINE = new ThymeleafTemplateEngine();
 
-    public static String render(Map<String, Object> model, String viewFilename) {
-        return THYMELEAF_TEMPLATE_ENGINE.render(new ModelAndView(model, viewFilename));
+    public static String render(Map<String, Object> model, String viewName) {
+        return THYMELEAF_TEMPLATE_ENGINE.render(new ModelAndView(model, viewName));
     }
 }

@@ -11,13 +11,14 @@ import java.util.*;
 
 public final class NameRoute {
 
-    private NameRoute() {}
+    private NameRoute() {
+    }
 
     public static class post implements Route {
 
         private static final String PARAMETER_NAMES = "names";
         private static final String SPLIT_TOKEN = "\\s";
-        private static final String VIEW_FILENAME = "game";
+        private static final String GAME_VIEW_NAME = "game";
 
         @Override
         public Object handle(Request request, Response response) throws Exception {
@@ -26,7 +27,7 @@ public final class NameRoute {
 
             final Map<String, Object> model = Collections.singletonMap("names", names);
 
-            return ThymeleafCompiler.render(model, VIEW_FILENAME);
+            return ThymeleafCompiler.render(model, GAME_VIEW_NAME);
         }
 
         private JSONArray getNames(Request request) {
