@@ -5,7 +5,7 @@ import com.zuniorteam.racingcar.core.strategy.RandomMovingStrategy;
 import com.zuniorteam.racingcar.dto.GameInput;
 import com.zuniorteam.racingcar.dto.GameResult;
 import com.zuniorteam.racingcar.util.StringUtils;
-import com.zuniorteam.racingcar.view.web.util.ThymeleafCompiler;
+import com.zuniorteam.racingcar.view.web.util.ThymeleafTemplateRender;
 import org.json.JSONArray;
 import spark.Request;
 import spark.Response;
@@ -38,7 +38,7 @@ public final class ResultRoute {
             final Map<String, Object> model = new HashMap<>();
             model.put("gameResult", gameResult);
 
-            return ThymeleafCompiler.render(model, RESULT_VIEW_NAME);
+            return ThymeleafTemplateRender.render(model, RESULT_VIEW_NAME);
         }
 
         private List<String> getNames(Request request) {

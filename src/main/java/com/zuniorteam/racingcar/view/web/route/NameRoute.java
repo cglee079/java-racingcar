@@ -1,7 +1,7 @@
 package com.zuniorteam.racingcar.view.web.route;
 
 import com.zuniorteam.racingcar.util.StringUtils;
-import com.zuniorteam.racingcar.view.web.util.ThymeleafCompiler;
+import com.zuniorteam.racingcar.view.web.util.ThymeleafTemplateRender;
 import org.json.JSONArray;
 import spark.Request;
 import spark.Response;
@@ -27,7 +27,7 @@ public final class NameRoute {
 
             final Map<String, Object> model = Collections.singletonMap("names", names);
 
-            return ThymeleafCompiler.render(model, GAME_VIEW_NAME);
+            return ThymeleafTemplateRender.render(model, GAME_VIEW_NAME);
         }
 
         private JSONArray getNames(Request request) {
